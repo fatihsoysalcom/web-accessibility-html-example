@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en"> <!-- Essential: Declares the primary language of the document for screen readers and search engines. -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accessible Web Page Example</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; margin: 20px; background-color: #f4f4f4; color: #333; }
+        header, nav, main, footer { margin-bottom: 20px; padding: 15px; border: 1px solid #ddd; border-radius: 5px; background-color: #fff; }
+        nav ul { list-style: none; padding: 0; margin: 0; }
+        nav li { display: inline-block; margin-right: 15px; }
+        nav a { text-decoration: none; color: #007bff; padding: 5px 0; }
+        nav a:hover { text-decoration: underline; }
+        img { max-width: 100%; height: auto; display: block; margin-top: 15px; border: 1px solid #eee; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"] { width: calc(100% - 16px); padding: 8px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box; }
+        button { padding: 10px 20px; background-color: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 16px; }
+        button:hover { background-color: #218838; }
+        /* Crucial: Visible focus indicator for keyboard users */
+        a:focus, button:focus, input:focus {
+            outline: 3px solid #007bff; /* High-contrast outline */
+            outline-offset: 2px;
+        }
+        h1, h2, h3 { color: #0056b3; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Accessible Web Page Demo</h1>
+        <!-- Semantic HTML elements (header, nav, main, footer) provide clear structure for assistive technologies. -->
+    </header>
+
+    <nav aria-label="Main navigation"> <!-- ARIA label provides a descriptive name for the navigation region. -->
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Our Accessible Site</h2>
+            <p>This example demonstrates key principles of web accessibility, ensuring content is perceivable, operable, understandable, and robust for all users.</p>
+
+            <img src="https://via.placeholder.com/400x200?text=Accessible+Image+Example" alt="A placeholder image with the text 'Accessible Image Example' demonstrating the use of alt text.">
+            <!-- 'alt' attribute is essential: provides a text alternative for screen readers and when the image fails to load. -->
+
+            <h3>Sign Up for Updates</h3>
+            <form>
+                <div>
+                    <label for="name">Your Name:</label>
+                    <input type="text" id="name" name="name" required aria-required="true">
+                    <!-- 'label' associated with 'input' via 'for' and 'id' ensures screen readers announce the label for the input. -->
+                    <!-- 'required' and 'aria-required="true"' indicate mandatory fields to both browsers and assistive technologies. -->
+                </div>
+                <div>
+                    <label for="email">Your Email:</label>
+                    <input type="email" id="email" name="email" required aria-required="true">
+                </div>
+                <button type="submit">Subscribe</button>
+                <!-- Native HTML buttons are inherently keyboard-focusable and operable, ensuring accessibility. -->
+            </form>
+        </section>
+
+        <section id="about">
+            <h2>About Accessibility</h2>
+            <p>Web accessibility benefits everyone, including people with temporary disabilities, those using mobile devices, or individuals with limited internet connectivity.</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Accessible Demo. All rights reserved.</p>
+    </footer>
+</body>
+</html>
